@@ -1,0 +1,712 @@
+/* Estilos Generales */
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 70px 10px 140px 10px;
+    background-color: #192a5f;
+    color: #fff;
+}
+
+/* Estilos para la barra fija en la parte superior */
+.fixed-top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.fixed-top-bar .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.fixed-top-bar .logo, .fixed-top-bar .nav-buttons {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el texto "Magnolia" */
+.fixed-top-bar .logo .text-magnolia {
+    color: #fff;
+}
+
+.fixed-top-bar .nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    flex-grow: 1; /* Asegura que los botones se centren correctamente */
+}
+
+.fixed-top-bar .nav-button {
+    font-size: 17px;
+    margin-left: 10px; /* Espaciado uniforme a la izquierda */
+    margin-right: 20px; /* 10px existentes más 10px adicionales */
+    padding: 5px 10px; /* Reducido para hacer botones más pequeños */
+    background-color: #555; /* Mantiene el color de fondo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1; /* Ajuste para no expandir demasiado los botones */
+    text-align: center;
+
+}
+
+.fixed-top-bar .nav-button:hover,
+.fixed-top-bar .nav-button:focus {
+    background-color: #4CAF50; /* Cambia el color de fondo en hover y en foco (seleccionado) */
+}
+
+/* Ajuste del padding del body para evitar superposición con la barra superior fija */
+body {
+    padding-top: 60px; /* Ajusta según sea necesario según la altura de tu barra superior */
+}
+
+
+
+.contact-button {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    z-index: 1000;
+    background-color: transparent; /* Fondo transparente */
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Sin padding */
+}
+
+.contact-button img {
+    width: 70px; /* Tamaño del logo de WhatsApp */
+    height: auto;
+}
+
+
+.carousel-container {
+    display: flex; /* Mantén flex si quieres usar flexbox para centrar verticalmente */
+    justify-content: center; /* Centra horizontalmente los elementos flexibles */
+    align-items: center; /* Centra verticalmente los elementos flexibles */
+    overflow: hidden;
+    width: 100%;
+    max-height: auto; /* Aumenta el ancho máximo para imágenes más grandes */
+    margin: auto; /* Centra el contenedor en la página */
+    position: relative;
+    height: auto; /* Puedes ajustar esto según necesites */
+
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    margin: 0;
+    flex: 0 0 100%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box; /* Ensures padding and border are included in width/height */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block; /* Prevents default inline behavior, removing bottom space */
+}
+
+/* Estilos para las flechas de cambio */
+#prev-slide,
+#next-slide {
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    z-index: 1;
+}
+/* Optionally, to prevent user from selecting images */
+.carousel-slide img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#prev-slide {
+    left: 10px;
+}
+
+#next-slide {
+    right: 10px;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+    font-size: 90px; /* Tamaño de fuente grande */
+    text-align: left; /* Alineado a la izquierda */
+    line-height: 1.4; /* Espaciado de línea para que se vea bien en dos líneas */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.title-container img {
+    width: 50%;
+}
+
+.question-text{
+    font-family: "Verdana";
+    background-color: white; /* Fondo blanco */
+    font-size: 40px; /* Tamaño de fuente grande */
+    color: #192a5f; /* Texto en negro */
+    margin: 0 100px; /* Márgenes a izquierda y derecha */
+    padding: 20px; /* Relleno para no tener el texto pegado a los bordes */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra opcional para dar profundidad */
+}
+
+.info-text {
+    font-family: "Helvetica";
+    background-color: white; /* Fondo blanco */
+    font-size: 25px; /* Tamaño de fuente grande */
+    color: #192a5f;  /* Texto en negro */
+    margin: 0 100px; /* Márgenes a izquierda y derecha */
+    padding: 20px; /* Relleno para no tener el texto pegado a los bordes */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra opcional para dar profundidad */
+}
+
+.question-text p, .info-text p {
+    margin: 0; /* Elimina márgenes por defecto del párrafo */
+}
+
+
+.container {
+    position: relative;
+    width: 100%; /* Ajusta esto si necesitas un ancho específico */
+    height: 1500;/* Por ejemplo, para un ancho máximo */
+    margin: 0 auto; /* Centra el contenedor si es más pequeño que el ancho de la ventana */
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio disponible */
+}
+
+
+
+/* Estilo para la sección de encabezado */
+.data-science-header {
+    color: #ffffff;
+    padding: 20px;
+    text-align: left; /* Alinea el texto a la izquierda */
+    max-width: 1300px;
+    margin: 0 auto; /* Centra el encabezado */
+    padding-left: 150px; /* Margen izquierdo de 150px */
+    padding-right: 150px; /* Margen derecho de 150px */
+}
+
+.data-science-header h2 {
+    font-family: "Verdana";
+    color: #e0e0e0; /* Gris claro para títulos */
+    /* Añade estilos adicionales aquí si es necesario */
+}
+
+
+/* Estilo para el contenedor que agrupa las columnas - contenedor interno */
+.data-science-columns {
+    display: flex;
+    justify-content: space-between; /* Ajustar espacio entre columnas */
+    flex-wrap: wrap; /* Permitir que las columnas se envuelvan */
+    gap: 10px; /* Espacio entre columnas y filas */
+    margin: 0 10px; /* Margen a izquierda y derecha del contenedor */
+    margin-bottom: 10px;
+}
+
+.data-science-columns h3 {
+    border-bottom: 2px solid #ffffff; /* Line under the header text */
+    padding-bottom: 20px; /* Space between the text and the line */
+}
+
+/* Estilo para cada enlace de columna */
+.data-science-column-link {
+    font-family: "Helvetica";
+    display: flex;
+    flex: 1 0 calc(25% - 20px);
+    text-decoration: none;
+    color: inherit;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave para transform y sombra */
+}
+
+/* Efecto al pasar el cursor */
+.data-science-column-link:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+/* Estilo para el contenido de cada columna */
+.data-science-column {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+
+/* Style for the first column link with a background image */
+.data-science-column-link:nth-child(1) {
+    position: relative;
+    background-image: url('images/software.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Adding a pseudo-element to create the transparency effect on the background */
+.data-science-column-link:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 42, 95, 0.5); /* Dark blue with 50% opacity */
+    z-index: 1;
+}
+
+/* Style for the first column link with a background image */
+.data-science-column-link:nth-child(2) {
+    position: relative;
+    background-image: url('images/data_analysis.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Adding a pseudo-element to create the transparency effect on the background */
+.data-science-column-link:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 42, 95, 0.5); /* Dark blue with 50% opacity */
+    z-index: 1;
+}
+
+/* Style for the first column link with a background image */
+.data-science-column-link:nth-child(3) {
+    position: relative;
+    background-image: url('images/ui.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Adding a pseudo-element to create the transparency effect on the background */
+.data-science-column-link:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 42, 95, 0.5); /* Dark blue with 50% opacity */
+    z-index: 1;
+}
+
+/* Style for the first column link with a background image */
+.data-science-column-link:nth-child(4) {
+    position: relative;
+    background-image: url('images/database.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Adding a pseudo-element to create the transparency effect on the background */
+.data-science-column-link:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 42, 95, 0.5); /* Dark blue with 50% opacity */
+    z-index: 1;
+}
+
+
+/* Adding a pseudo-element to create the transparency effect */
+.data-science-column-link:nth-child(1)::before {
+    content: ''; /* Necessary for pseudo-elements */
+    position: absolute; /* Position it over the link */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 42, 95, 0.5); /* White with 50% opacity */
+    z-index: 1; /* Ensure it's above the background image */
+}
+
+.data-science-columns a, .data-science-columns p, .data-science-columns li, .data-science-columns h3 {
+    font-size: 16px;
+    line-height: 1.1;
+    color: #ffffff; /* Cambiar color del texto a blanco */
+    text-align: left; /* Alinear texto a la izquierda en las columnas */
+    text-decoration: none; /* Quitar subrayado de enlaces */
+}
+
+
+.cta p {
+    font-size: 50px;
+    color: #ffffff; /* Color llamativo para el CTA */
+    font-weight: bold; /* Texto en negrita para resaltar */
+    text-align: center;
+}
+
+/* Estilos para la sección 'Conoce a Nuestro Equipo de Expertos' */
+.equipo-trabajo {
+    background-color: rgba(85, 85, 85, 0.7); /* Fondo claro para la sección */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin: 20px 0;
+    text-align: center; /* Alinear texto al centro */
+    max-width: 1300px;
+    margin: 0 auto; /* This will center the element */
+}
+
+.equipo-trabajo h2 {
+    font-family: "Verdana";
+    font-size: 27px;
+    color: #ffffff; /* Color distintivo para los títulos */
+}
+
+/* Estilos para la sección de contactos */
+.contacts-section {
+    padding: 20px;
+    background-color: rgba(85, 85, 85, 0.55);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 1000px; /* Adjust this value to control the width */
+    margin: 0 auto; /* This will center the element */
+    padding-left: 150px; /* Margen izquierdo de 150px */
+    padding-right: 150px; /* Margen derecho de 150px */
+}
+
+.contact-images {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente si es necesario */
+}
+
+
+.contact-images img {
+    width: 300px;
+    height: auto;
+    border-radius: 50%; /* Hace las imágenes circulares */
+    margin: 10px 0;
+}
+
+.contact-images div {
+    margin-bottom: 20px;
+}
+
+
+.linkedin-button {
+    display: block;
+    width: 40px; /* Ajusta según el tamaño deseado */
+    height: 40px; /* Ajusta según el tamaño deseado */
+    background-image: url('images/linkdin.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* Añade un margen en la parte superior si es necesario */
+}
+ 
+
+.hamburger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px 50px;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+}
+
+.nav-buttons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 20px;
+    padding-left: 600px; /* Margen izquierdo */
+    padding-right: 50px; /* Margen derecho */
+}
+
+.nav-buttons a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+
+/* Estilos para la sección principal después del encabezado fijo */
+#data-science-services h1 {
+    font-family: "Verdana", sans-serif;
+    color: #ffffff; /* Color de texto blanco */
+    font-size: 30px; /* Tamaño de fuente más grande */
+    text-align: center; /* Centrado */
+    background-color: rgba(85, 85, 85, 0.7); /* Fondo semi-transparente gris */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 20px; /* Espacio arriba del título */
+    max-width: 1300px;
+    margin-left: auto; /* Centrado horizontal */
+    margin-right: auto; /* Centrado horizontal */
+    margin-bottom: 0px;
+}
+
+
+#data-science-services p {
+    font-family: "Verdana", sans-serif;
+    color: #ffffff; /* Color de texto blanco */
+    font-size: 20px; /* Tamaño de fuente más grande */
+    text-align: center; /* Centrado */
+    background-color: rgba(85, 85, 85, 0.7); /* Fondo semi-transparente gris */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 20px; /* Espacio arriba del título */
+    max-width: 1300px;
+    margin-left: auto; /* Centrado horizontal */
+    margin-right: auto; /* Centrado horizontal */
+    margin-bottom: 20px;
+}
+
+/* Estilos para las secciones de servicios con el estilo similar a la sección de contactos */
+.data-science-section {
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    max-width: 1000px; /* Controla el ancho */
+    margin: 0 auto; /* Centrado horizontal */
+    position: relative; /* Needed for pseudo-element positioning */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Ensures the border-radius clips the content */
+    margin-bottom: 60px;
+}
+
+
+/* Unique background images for each section with semi-transparent effect */
+.data-science-section#machine-learning {
+    background: url('images/software.png') no-repeat center center;
+    background-size: cover;
+}
+
+.data-science-section#automatizacion-ia {
+    background: url('images/data_analysis.png') no-repeat center center;
+    background-size: cover;
+}
+
+.data-science-section#servicios-nube {
+    background: url('images/ui.png') no-repeat center center;
+    background-size: cover;
+}
+
+.data-science-section#desarrollo-interfaces {
+    background: url('images/database.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Adding a pseudo-element to create the transparency effect on the background */
+.data-science-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(85, 85, 85, 0.6); /* Dark layer with semi-transparency */
+    z-index: 0; /* Behind the content */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Align text to the left */
+.data-science-section h2,
+.data-science-section p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hide the img elements, as backgrounds are now being used */
+.data-science-section img {
+    display: none; /* Hide the img element as we are using background images */
+}
+
+
+.data-science-section p {
+    color: #ffffff; /* Color de texto blanco */
+    font-size: 16px; /* Tamaño de fuente para texto normal */
+    width: 100%; /* Asegura que ocupe la línea completa */
+    text-align: center; /* Texto centrado */
+    margin-bottom: 10px; /* Espacio debajo del párrafo */
+}
+.services-navigation {
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-button {
+    display: block; /* Hace que los botones se apilen verticalmente */
+    margin: 10px auto; /* Añade margen arriba y abajo, y centra horizontalmente */
+    padding: 15px 30px; /* Añade relleno para aumentar el tamaño del botón */
+    background-color: #808080; /* Color de fondo gris */
+    color: white; /* Color de texto blanco */
+    text-decoration: none; /* Elimina el subrayado del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.service-button:hover, .service-button:focus {
+    background-color: #3e8e41; /* Cambia a color verde al pasar el ratón o seleccionar */
+}
+
+
+
+@media (max-width: 767px) {
+    .nav-buttons {
+        padding-left: 0; /* Sin margen izquierdo en móviles */
+        width: 100%;
+    }
+    
+    body {
+        padding-top: 60px; /* Ajusta según sea necesario según la altura de tu barra superior */
+    }
+
+    .title-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-container img {
+        width: 60%; /* Reducción del tamaño de la imagen */
+        margin-top: 20px; /* Espacio adicional entre el texto y la imagen */
+    }
+
+    .title {
+        font-size: 35px; /* Tamaño de fuente más pequeño para el título */
+        text-align: center;
+        margin: 0;
+    }
+    .question-text {
+        font-size: 27px; /* Tamaño de fuente más pequeño para el título */
+    }
+
+    .question-text, .info-text, .cta p,
+    #equipo-trabajo, .contacts-section {
+        margin: 10px; /* Reducción del margen */
+        text-align: center;
+    }
+
+    .info-text, .cta p,
+    #equipo-trabajo h2, .contacts-section {
+        font-size: 16px; /* Reducción del tamaño de la fuente */
+    }
+
+    .contact-button {
+        position: fixed; /* Hace que el botón se mantenga fijo al hacer scroll */
+        z-index: 1002; /* Asegura que esté por encima de otros elementos */
+    }
+
+    .carousel-container {
+        max-height: 250px;
+    }
+    .contact-images {
+        flex-direction: column; /* Alinea los elementos en columna en pantallas pequeñas */
+        align-items: center; /* Mantiene los elementos centrados */
+    }
+
+    .contact-images img {
+        width: 100px; /* Reduce el tamaño de la imagen para pantallas pequeñas */
+        margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+    }
+
+    .contact-images div {
+        padding-top: 5px; /* Reduce el espacio entre la imagen y el texto */
+        font-size: 9px; /* Reduce el tamaño de fuente */
+    }
+
+    .linkedin-button {
+        width: 25px; /* Reduce el tamaño del botón */
+        height: 25px; /* Reduce el tamaño del botón */
+    }
+
+    .data-science-columns {
+        flex-direction: column;
+        align-items: center; /* Centrar columnas en dispositivos móviles */
+        margin: 0; /* Eliminar margen lateral en dispositivos móviles */
+    }
+    .data-science-column-link {
+        width: 100%; /* Las columnas ocuparán el ancho completo en dispositivos móviles */
+        max-width: 100%; /* Asegurar que no superen el ancho disponible */
+        margin-bottom: 10px; /* Margen solo en la parte inferior de cada columna */
+    }
+    .data-science-column {
+        margin: 0; /* Resetear el margen para dispositivos móviles */
+        height: auto; /* Altura automática para adaptarse al contenido */
+    }
+    /* Ajustar el tamaño de fuente para pantallas más pequeñas si es necesario */
+    .data-science-columns p,
+    .data-science-columns li,
+    .data-science-columns h3 {
+        font-size: 14px;
+        line-height: 1.1; /* Reducir el espacio entre líneas para un texto más compacto */
+    }
+    .data-science-columns h3 {
+        margin-bottom: 5px; /* Reducir el espacio debajo del título */
+    }
+    .data-science-footer,
+    .data-science-header {
+        padding-left: 20px; /* Reduced left padding for mobile */
+        padding-right: 20px; /* Reduced right padding for mobile */
+    }
+}
